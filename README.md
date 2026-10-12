@@ -38,6 +38,7 @@ Open **http://127.0.0.1:3001**. Deploy behind HTTPS; Web Crypto requires a secur
 - Switch between Solana devnet + Ethereum Sepolia and both mainnets.
 - Explicit loading/error/retry states; RPC failures never become a fabricated zero.
 - Responsive dashboard, account management, and security views.
+- Light/dark theme toggle with saved preferences; follows system appearance until you choose a theme.
 
 ## Architecture
 

@@ -4,6 +4,8 @@ import {
   ArrowRight,
   Check,
   ChevronDown,
+  Moon,
+  Sun,
   Eye,
   Fingerprint,
   Layers3,
@@ -30,7 +32,9 @@ import BackupDialog from "./components/BackupDialog";
 import BalancePanel from "./components/BalancePanel";
 import AccountPanel from "./components/AccountPanel";
 import RecoveryDialog from "./components/RecoveryDialog";
+import { useTheme } from "./lib/useTheme";
 export default function App() {
+  const { theme, toggleTheme } = useTheme();
   const [initial] = useState(() => {
     try {
       const raw = localStorage.getItem(VAULT_STORAGE_KEY);
@@ -271,6 +275,22 @@ export default function App() {
             </strong>
           </div>
           <div className="topbar-actions">
+            <button
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label={
+                theme === "dark"
+                  ? "Switch to light mode"
+                  : "Switch to dark mode"
+              }
+              title={
+                theme === "dark"
+                  ? "Switch to light mode"
+                  : "Switch to dark mode"
+              }
+            >
+              {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
+            </button>
             <label className="network-select">
               <span
                 className={`status-dot ${network === "mainnet" ? "purple" : ""}`}
